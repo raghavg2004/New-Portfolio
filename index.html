@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" type="x-icon" href="./assets/img/icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raghav's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        body {
+            margin: 0;
+            overflow: auto;
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #000;
+        }
+
+        .canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .header {
+            backdrop-filter: blur(10px);
+            background: rgb(15, 14, 10);
+            padding: 10px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .main {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero {
+            color: #fff;
+        }
+
+        footer {
+            backdrop-filter: blur(10px);
+            background: rgb(16, 128, 163);
+            padding: 20px 0;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js" integrity="sha512-BdHyGtczsUoFcEma+MfXc71KJLv/cd+sUsUaYYf2mXpfG/PtBjNXsPo78+rxWjscxUYN2Qr2+DbeGGiJx81ifg==" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <canvas class="canvas-container" id="starCanvas"></canvas>
+
+    <header id="header" class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="nav__brand">
+                    <i class="ri-code-s-slash-line"></i>Raghav <span>Gupta</span>
+                </a>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#hero" class="nav__link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">About</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#service" class="nav__link">Services</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#project" class="nav__link">Projects</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav__toggle">
+                    <i id="nav-toggle" class="ri-menu-3-line"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="main">
+        <section id="hero" class="hero">
+            <div class="container">
+                <div class="d-grid hero__wrapper">
+                    <div class="hero__content">
+                        
+                        <h1 class="hero__title">Hi, I'm Raghav Gupta!<br></h1>
+                        <div class="text"></div>
+                        <div class="hero__info">
+                            <!--<div class="hero__info-wrapper">
+                                <p class="hero__info-number">01</p>
+                                <h2 class="hero__info-title">Year of<br>Experience</h2>
+                            </div>
+                            <div class="hero__info-wrapper">
+                                <p class="hero__info-number">30+</p>
+                                <h2 class="hero__info-title">Team<br>Members</h2>
+                            </div>-->
+                        </div>
+                    </div>
+                    <img src="assets/img/aman.jpg.png" alt="Shawn" class="hero__img">
+                </div>
+            </div>
+        </section>
+
+<!--=================== About Section ====================-->
+<section id="about" class="section about">
+    <div class="container">
+        <div class="section__header">
+            <h2 class="section__title">About Me</h2>
+            <span class="section__subtitle">Who am I</span>
+        </div>
+        
+        <!-- Wrapper for About and Education in two columns -->
+        <div class="about__wrapper d-grid">
+            
+            <!-- About Content - Left Column -->
+            <div class="about__content">
+                <h3 class="about__title">I'm Raghav Gupta – Aspiring Software Engineer and Android Developer.</h3>
+                <p class="about__description">
+                    Currently pursuing a Bachelor of Technology in Computer Science and Engineering at Chandigarh Group of Colleges, Landran, I'm passionate about Software Engineering, Operating Systems, Android Development, and Frontend Development. My skill set includes programming languages like C, C++, Java, Kotlin, and Dart, which I use to create responsive, user-centered applications.
+                </p>
+                <p class="about__description">
+                    I’m always eager to tackle new challenges and bring creative ideas to life in a collaborative environment. Beyond coding, I enjoy reading, writing, gaming, traveling, and trekking – all of which fuel my enthusiasm and adaptability. I’m excited to apply my knowledge, contribute to a dynamic team, and make a meaningful impact in the tech world.
+                </p>
+            </div>
+            
+            <!-- Education Content - Right Column -->
+            <div class="qualification__wrapper">
+                <h3 class="qualification__name">
+                    <i class="ri-booklet-fill"></i> Education
+                </h3>
+                <div class="qualification__content">
+                    <!-- Education 1-->
+                    <div class="qualification__item">
+                        <h3 class="qualification__title">B.Tech in Computer Science and Engineering</h3>
+                        <p class="qualification__description">
+                            As a computer science student, I have a strong foundation in algorithms, data structures, software design, and development. My coursework has provided me with a deep understanding of computer science principles, honed through projects and assignments.
+                        </p>
+                        <span class="qualification__date">2023 - 26 (Present)</span>
+                    </div>
+                    
+                    <!-- Education 2-->
+                    <div class="qualification__item">
+                        <h3 class="qualification__title"></h3>
+                        <h3 class="qualification__title">Diploma in Electrical Engineering</h3>
+                        <p class="qualification__description">
+                            Gained foundational knowledge in Electrical Circuits, Systems, & Technologies, with hands-on experience in power systems, electronics, and automation.
+                        </p>
+                        <span class="qualification__date">2020 - 23</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+        <!--=================== services ====================-->
+        <section id="service" class="section service">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Services</h2>
+                    <span class="section__subtitle">What I do</span>
+                </div>
+                <div class="d-grid service__wrapper">
+                    <div class="service__card">
+                        <div class="service__icon">
+                            <i class="ri-layout-4-fill"></i>
+                        </div>
+                        <h3 class="service__title">Android Deveclopment</h3>
+                        <a href="#" class="service__link">"Providing professional Android development services to help bring your app ideas to life. Specializing in custom, user-friendly, and high-performance mobile solutions tailored to your needs."</a>
+                    </div>
+                    <div class="service__card">
+                        <div class="service__icon">
+                            <i class="ri-code-s-slash-line"></i>
+                        </div>
+                        <h3 class="service__title">Web Development</h3>
+                        <a href="#" class="service__link">"Offering expert web development services to create engaging and responsive websites. Specializing in custom solutions that enhance user experience and drive business success."</a>
+                    </div>
+                    <div class="service__card">
+                        <div class="service__icon">
+                            <i class="ri-pen-nib-fill"></i>
+                        </div>
+                        <h3 class="service__title">Consultation</h3>
+                        <a href="#" class="service__link">"Providing expert consultation services to guide businesses in technology adoption, project planning, and best development practices. Empowering clients to make informed decisions that drive efficiency and innovation."</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!--=================== Projects ====================-->
+    <section id="project" class="section project">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">My Projects</h2>
+                <span class="section__subtitle">Browse My Recent Work</span>
+            </div>
+
+            <div class="project__grid">
+                <!-- Project 1 -->
+                <div class="project__item">
+                    <img src="./assets/img/project-1.png" alt="Project 1" class="project__img" />
+                    <h3 class="section__title">Calculator</h3>
+                    <button class="btn project__btn" onclick="location.href='https://github.com/raghavg2004/Calculator'">
+                        GitHub
+                    </button>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project__item">
+                    <img src="./assets/img/project-2.png" alt="Project 2" class="project__img" />
+                    <h3 class="section__title">Pay Secure</h3>
+                    <button class="btn project__btn" onclick="location.href='https://github.com/raghavg2004/Pay-Secure-Android-Application'">
+                        GitHub
+                    </button>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project__item">
+                    <img src="./assets/img/project-3.png" alt="Project 3" class="project__img" />
+                    <h3 class="section__title">Sorting Visualizer</h3>
+                    <button class="btn project__btn" onclick="location.href='https://dsa-sortingvisualizer.vercel.app/'">
+                        Live Demo
+                    </button>
+                    <button class="btn project__btn" onclick="location.href='https://github.com/raghavg2004/Sorting-Visualizer'">
+                        GitHub
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+            <!--=================== Contact ====================-->
+        <section id="contact" class="footer">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Contact</h2>
+                    <span class="section__subtitle">Get in Touch</span>
+                </div>
+                <div class="d-grid footer__wrapper">
+                    <div class="footer__content">
+                        <h4 class="footer__title"> </h4>
+                        <h4 class="footer__title">Follow Me</h4>
+                        <ul class="footer__social-list">
+                            <li class="footer__social-item">
+                                <a href="https://www.instagram.com/raghavgupta.04?igsh=cXQ1d21xbm1waWlk" target="_blank" class="footer__social-link">
+                                    <i class="ri-instagram-fill"></i>
+                                </a>
+                            </li>
+                            <li class="footer__social-item">
+                                <a href="https://www.linkedin.com/in/raghavgupta2004" target="_blank" class="footer__social-link">
+                                    <i class="ri-linkedin-fill"></i>
+                                </a>
+                            </li>
+                            <li class="footer__social-item">
+                                <a href="https://github.com/raghavg2004" target="_blank" class="footer__social-link">
+                                    <i class="ri-github-fill"></i>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="contact-info-container">
+                        <form action="https://api.web3forms.com/submit" method="POST">
+                            <!-- Replace with your Access Key -->
+                            <input type="hidden" name="access_key" value="8d06a276-690d-46fb-bd95-3e792f4d81d0">
+                            
+                            <!-- Form Inputs -->
+                            <div class="wrap-input">
+                                <input class="input" type="text" name="name" placeholder="Name" required>
+                                <span class="focus-border"><i></i></span>
+                            </div>
+                            <div class="wrap-input">
+                                <input class="input" type="email" name="email" placeholder="Email" required>
+                                <span class="focus-border"><i></i></span>
+                            </div>
+                            <div class="wrap-input">
+                                <textarea class="input" name="message" placeholder="Message" required></textarea>
+                                <span class="focus-border"><i></i></span>
+                            </div>
+                            
+                            <!-- Honeypot Spam Protection -->
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                            <!-- Custom Confirmation / Success Page -->
+                            <input type="hidden" name="redirect" value="https://raghavg.vercel.app">
+                            
+                            <!-- Submit Button -->
+                            <div class="contact__btn">
+                                <button type="submit" class="btn btn--secondary">Send Message</button>
+                            </div>
+                        </form>
+                    </div> 
+                </div>
+                <p class="footer__copyright">&copy;2024 Raghav Gupta. All Rights Reserved.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        var typing = new Typed(".text", {
+            strings: ["Android Developer", "Web Developer", "Freelancer"],
+            typeSpeed: 100,
+            backSpeed: 40,
+            loop: true,
+            SharedWorker: false,
+            ShadowRoot: false,
+            showCursor: false // Hide the default cursor
+        });
+        
+        const canvas = document.getElementById('starCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let stars = [];
+        const numStars = 500;
+
+        for (let i = 0; i < numStars; i++) {
+            stars.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 2,
+                velocityX: (Math.random() - 0.5) * 0.5,
+                velocityY: (Math.random() - 0.5) * 0.5
+            });
+        }
+
+        function drawStars() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+            stars.forEach(star => {
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 1);
+                ctx.fill();
+            });
+        }
+
+        function updateStars() {
+            stars.forEach(star => {
+                star.x += star.velocityX;
+                star.y += star.velocityY;
+
+                if (star.x < 0 || star.x > canvas.width) {
+                    star.velocityX = -star.velocityX;
+                }
+                if (star.y < 0 || star.y > canvas.height) {
+                    star.velocityY = -star.velocityY;
+                }
+            });
+        }
+
+        function animate() {
+            drawStars();
+            updateStars();
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
+</body>
+</html>
