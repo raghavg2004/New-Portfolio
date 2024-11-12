@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/scroll.css">
+    <link rel="stylesheet" href="assets/css/formstyle.css">
     <style>
         body {
             margin: 0;
@@ -166,44 +167,88 @@
                         <span class="qualification__date">2020 - 23</span>
                     </div>
                 </div>
-            </div>
-            
+            </div>          
         </div>
     </div>
 </section>
 
-        <!--=================== services ====================-->
-        <section id="service" class="section service">
-            <div class="container">
-                <div class="section__header">
-                    <h2 class="section__title">Services</h2>
-                    <span class="section__subtitle">What I do</span>
+
+<!--=================== services ====================-->
+<section id="service" class="section service">
+    <div class="container">
+        <div class="section__header">
+            <h2 class="section__title">Services</h2>
+            <span class="section__subtitle">What I do</span>
+        </div>
+        <div class="d-grid service__wrapper">
+            <div class="service__card" onclick="openModal('Android Development')">
+                <div class="service__icon">
+                    <i class="ri-layout-4-fill"></i>
                 </div>
-                <div class="d-grid service__wrapper">
-                    <div class="service__card">
-                        <div class="service__icon">
-                            <i class="ri-layout-4-fill"></i>
-                        </div>
-                        <h3 class="service__title">Android Development</h3>
-                        <a href="#" class="service__link">"Providing professional Android development services to help bring your app ideas to life. Specializing in custom, user-friendly, and high-performance mobile solutions tailored to your needs."</a>
-                    </div>
-                    <div class="service__card">
-                        <div class="service__icon">
-                            <i class="ri-code-s-slash-line"></i>
-                        </div>
-                        <h3 class="service__title">Web Development</h3>
-                        <a href="#" class="service__link">"Offering expert web development services to create engaging and responsive websites. Specializing in custom solutions that enhance user experience and drive business success."</a>
-                    </div>
-                    <div class="service__card">
-                        <div class="service__icon">
-                            <i class="ri-pen-nib-fill"></i>
-                        </div>
-                        <h3 class="service__title">Consultation</h3>
-                        <a href="#" class="service__link">"Providing expert consultation services to guide businesses in technology adoption, project planning, and best development practices. Empowering clients to make informed decisions that drive efficiency and innovation."</a>
-                    </div>
-                </div>
+                <h3 class="service__title">Android Development</h3>
+                <p class="service__link">"Providing professional Android development services to help bring your app ideas to life. Specializing in custom, user-friendly, and high-performance mobile solutions tailored to your needs."</p>
             </div>
-        </section>
+            <div class="service__card" onclick="openModal('Web Development')">
+                <div class="service__icon">
+                    <i class="ri-code-s-slash-line"></i>
+                </div>
+                <h3 class="service__title">Web Development</h3>
+                <p class="service__link">"Offering expert web development services to create engaging and responsive websites. Specializing in custom solutions that enhance user experience and drive business success."</p>
+            </div>
+            <div class="service__card" onclick="openModal('Consultation')">
+                <div class="service__icon">
+                    <i class="ri-pen-nib-fill"></i>
+                </div>
+                <h3 class="service__title">Consultation</h3>
+                <p class="service__link">"Providing expert consultation services to guide businesses in technology adoption, project planning, and best development practices. Empowering clients to make informed decisions that drive efficiency and innovation."</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dialog Box with Form -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span id="closeModalButton" class="close" onclick="closeModal()">&times;</span>
+        <h2>Contact Us</h2>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="8d06a276-690d-46fb-bd95-3e792f4d81d0">
+            <input type="text" id="name" name="name" placeholder="Name" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="tel" id="phone" name="phone" maxlength="10" placeholder="Phone No." required>
+            <label>Select Service:</label>
+                <div class="service-tiles">
+                    <div class="service-tile" data-service="Android Development">Android Development</div>
+                    <div class="service-tile" data-service="Web Development">Web Development</div>
+                    <div class="service-tile" data-service="Consultation">Consultation</div>
+                </div>
+            <textarea id="message" name="message" rows="4" placeholder="Message" required></textarea>
+            <input type="hidden" name="redirect" value="https://raghavg.vercel.app">
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+    // Function to open the modal and set the selected service
+    function openModal(service) {
+        document.getElementById("contactModal").style.display = "flex"; // Show modal as flex to center it
+        document.getElementById("service").value = service;  // Set service name in input
+    }
+    // Function to close the modal
+    function closeModal() {
+        document.getElementById("contactModal").style.display = "none";
+    }
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+        var modal = document.getElementById("contactModal");
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
 
     <!--=================== Projects ====================-->
     <section id="project" class="section project">
@@ -304,7 +349,7 @@
                             
                             <!-- Submit Button -->
                             <div class="contact__btn">
-                                <button type="submit" class="btn btn--secondary">Send Message</button>
+                                <button type="submit" class="btn btn--secondary">Send Alert</button>
                             </div>
                         </form>
                     </div> 
@@ -380,4 +425,5 @@
     </script>
 </body>
 <script src="assets/js/scroll.js"></script>
+<script src="assets/js/formscript.js"></script>
 </html>
