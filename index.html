@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/scroll.css">
     <link rel="stylesheet" href="assets/css/formstyle.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <style>
         body {
             margin: 0;
@@ -206,24 +207,29 @@
     </div>
 </section>
 
+
+
 <!-- Dialog Box with Form -->
-<div id="contactModal" class="modal">
+<div id="contactModal" class="modal" style="display: none;">
     <div class="modal-content">
         <span id="closeModalButton" class="close" onclick="closeModal()">&times;</span>
         <h2>Contact Us</h2>
-        <form action="https://api.web3forms.com/submit" method="POST">
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateServiceSelection()">
             <input type="hidden" name="access_key" value="8d06a276-690d-46fb-bd95-3e792f4d81d0">
             <input type="text" id="name" name="name" placeholder="Name" required>
             <input type="email" id="email" name="email" placeholder="Email" required>
             <input type="tel" id="phone" name="phone" maxlength="10" placeholder="Phone No." required>
+            
             <label>Select Service:</label>
-                <div class="service-tiles">
-                    <div class="service-tile" data-service="Android Development">Android Development</div>
-                    <div class="service-tile" data-service="Web Development">Web Development</div>
-                    <div class="service-tile" data-service="Consultation">Consultation</div>
-                </div>
+            <div class="service-tiles">
+                <label><input type="radio" name="service" value="Android Development" required> Android Development</label><br>
+                <label><input type="radio" name="service" value="Web Development"> Web Development</label><br>
+                <label><input type="radio" name="service" value="Consultation"> Consultation</label>
+            </div>   
+            
             <textarea id="message" name="message" rows="4" placeholder="Message" required></textarea>
-            <input type="hidden" name="redirect" value="https://raghavg.vercel.app">
+            <input type="hidden" name="redirect" value="https://raghavg.vercel.app"><br>
+            <div class="g-recaptcha" data-sitekey="6Lc4QoAqAAAAAK4KHu8snJrtsD6D8Oq1qgbYJm6Y"></div>
             <button type="submit" class="submit-button">Submit</button>
         </form>
     </div>
@@ -231,23 +237,35 @@
 
 <!-- JavaScript -->
 <script>
-    // Function to open the modal and set the selected service
-    function openModal(service) {
-        document.getElementById("contactModal").style.display = "flex"; // Show modal as flex to center it
-        document.getElementById("service").value = service;  // Set service name in input
+    // Open the modal
+    function openModal() {
+        document.getElementById("contactModal").style.display = "flex";
     }
-    // Function to close the modal
+
+    // Close the modal
     function closeModal() {
         document.getElementById("contactModal").style.display = "none";
     }
-    // Close modal when clicking outside of it
-    window.onclick = function(event) {
+
+    // Close the modal when clicking outside the modal content
+    window.addEventListener('click', function(event) {
         var modal = document.getElementById("contactModal");
         if (event.target === modal) {
             modal.style.display = "none";
         }
+    });
+
+    // Validate service selection before form submission
+    function validateServiceSelection() {
+        const selectedService = document.querySelector('input[name="service"]:checked');
+        if (!selectedService) {
+            alert("Please select a service before submitting.");
+            return false; // Prevent form submission
+        }
+        return true; // Allow form submission
     }
 </script>
+
 
 
     <!--=================== Projects ====================-->
