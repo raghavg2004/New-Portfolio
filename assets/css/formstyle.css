@@ -121,6 +121,11 @@ input, textarea {
     margin-top: 10px;
 }
 
+.selected {
+    background-color: #f0f0f0; /* or any color that shows selection */
+    border: 2px solid #00ff1e;
+}
+
 .service-tile {
     flex: 1;
     min-width: 100px;
